@@ -38,16 +38,9 @@ public class Java_Ex14_ArrayMagicSquare {
         columns = inputArray.split("\t");
         //rows = inputArray.split("\n");
         int lengthCol = columns.length;
-        System.out.println(Arrays.toString(columns));
-        
-        
-        for(int i=0; i<lengthCol; i++){
-            System.out.println((columns[i]));
-        }
         
         String[][] squareArray = new String[lengthCol][lengthCol];
         
-        System.out.println(inputArray);
         for(int i=0; i<lengthCol;i++){
             for(int j=0; j<lengthCol;j++){
                 squareArray[i][j] = columns[j];

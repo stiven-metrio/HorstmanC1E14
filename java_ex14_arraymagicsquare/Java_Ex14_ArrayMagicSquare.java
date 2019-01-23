@@ -48,18 +48,19 @@ public class Java_Ex14_ArrayMagicSquare {
             if (i!=lengthCol-1){
                 inputArray = scan.nextLine();
                 columns = inputArray.split("\t");
-                System.out.println(inputArray);
+                //System.out.println(inputArray);
             }
         }   
         
-        /*
+        // Sum of columns
+        int[] sumCols = new int[lengthCol];
         for(int i1=0; i1<lengthCol;i1++){
             for(int j=0; j<lengthCol;j++){
-               System.out.printf("%s\t",squareArray[i1][j]);
+                sumCols[i1] += Integer.parseInt(squareArray[i1][j]);
             }
-            System.out.println();
+            //System.out.println(sumCols[i1]);
         }
-        */
+        System.out.println(Arrays.toString(sumCols));
 
     }
     

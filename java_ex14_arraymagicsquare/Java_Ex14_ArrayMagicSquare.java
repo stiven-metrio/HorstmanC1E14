@@ -58,9 +58,17 @@ public class Java_Ex14_ArrayMagicSquare {
             for(int j=0; j<lengthCol;j++){
                 sumCols[i1] += Integer.parseInt(squareArray[i1][j]);
             }
-            //System.out.println(sumCols[i1]);
         }
         System.out.println(Arrays.toString(sumCols));
+        
+        // Sum of columns
+        int[] sumRows = new int[lengthCol];
+        for(int i1=0; i1<lengthCol;i1++){
+            for(int j=0; j<lengthCol;j++){
+                sumRows[i1] += Integer.parseInt(squareArray[j][i1]);
+            }
+        }
+        System.out.println(Arrays.toString(sumRows));
 
     }
     

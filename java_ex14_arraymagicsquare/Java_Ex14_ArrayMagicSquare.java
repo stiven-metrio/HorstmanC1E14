@@ -72,6 +72,12 @@ public class Java_Ex14_ArrayMagicSquare {
         }
         System.out.println(sumAntiDiagonal);
         
+        // Check if diagonals are equal
+        if(sumMainDiagonal != sumAntiDiagonal){
+            System.out.println("The matrix is not a magic square");
+            System.exit(0);
+        }
+        
         // Sum of columns
         int[] sumCols = new int[lengthCol];
         for(int i1=0; i1<lengthCol;i1++){
@@ -90,7 +96,14 @@ public class Java_Ex14_ArrayMagicSquare {
         }
         System.out.println(Arrays.toString(sumRows));
 
- 
+        // Check it the totals of rows and columns are equal
+        for(int i1=0; i1<lengthCol;i1++){
+            if((sumRows[i1] != sumCols[i1]) || (sumCols[i1] != sumMainDiagonal)){
+                System.out.println("The matrix is not a magic square");
+                System.exit(0);
+            }
+        }
+        System.out.println("This is a Magic Square");
     }
     
 }

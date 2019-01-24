@@ -61,7 +61,7 @@ public class Java_Ex14_ArrayMagicSquare {
         }
         System.out.println(Arrays.toString(sumCols));
         
-        // Sum of columns
+        // Sum of rows
         int[] sumRows = new int[lengthCol];
         for(int i1=0; i1<lengthCol;i1++){
             for(int j=0; j<lengthCol;j++){
@@ -70,15 +70,25 @@ public class Java_Ex14_ArrayMagicSquare {
         }
         System.out.println(Arrays.toString(sumRows));
 
-        // Sum of origin diagonal
-        int sumOriginDiagonal = 0;
+        // Sum of main diagonal
+        int sumMainDiagonal = 0;
         for(int i1=0; i1<lengthCol;i1++){
             for(int j=0; j<lengthCol;j++){
                 if(i1==j)
-                sumOriginDiagonal += Integer.parseInt(squareArray[j][i1]);
+                sumMainDiagonal += Integer.parseInt(squareArray[j][i1]);
             }
         }
-        System.out.println(sumOriginDiagonal);    
+        System.out.println(sumMainDiagonal);
+        
+        // Sum of antidiagonal
+        int sumAntiDiagonal = 0;
+        for(int i1=0; i1<lengthCol;i1++){
+            for(int j=0; j<lengthCol;j++){
+                if((j==((lengthCol-1)-i1)))
+                sumAntiDiagonal += Integer.parseInt(squareArray[i1][j]);
+            }
+        }
+        System.out.println(sumAntiDiagonal);  
     }
     
 }

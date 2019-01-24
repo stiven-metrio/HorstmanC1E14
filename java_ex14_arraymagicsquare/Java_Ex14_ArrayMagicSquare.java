@@ -39,8 +39,8 @@ public class Java_Ex14_ArrayMagicSquare {
         //rows = inputArray.split("\n");
         int lengthCol = columns.length;
         
+        // Save input values (Create matrix)
         String[][] squareArray = new String[lengthCol][lengthCol];
-        
         for(int i=0; i<lengthCol;i++){
             for(int j=0; j<lengthCol;j++){
                 squareArray[i][j] = columns[j];
@@ -50,7 +50,27 @@ public class Java_Ex14_ArrayMagicSquare {
                 columns = inputArray.split("\t");
                 //System.out.println(inputArray);
             }
-        }   
+        }
+        
+        // Sum of main diagonal
+        int sumMainDiagonal = 0;
+        for(int i1=0; i1<lengthCol;i1++){
+            for(int j=0; j<lengthCol;j++){
+                if(i1==j)
+                sumMainDiagonal += Integer.parseInt(squareArray[j][i1]);
+            }
+        }
+        System.out.println(sumMainDiagonal);
+        
+        // Sum of antidiagonal
+        int sumAntiDiagonal = 0;
+        for(int i1=0; i1<lengthCol;i1++){
+            for(int j=0; j<lengthCol;j++){
+                if((j==((lengthCol-1)-i1)))
+                sumAntiDiagonal += Integer.parseInt(squareArray[i1][j]);
+            }
+        }
+        System.out.println(sumAntiDiagonal);
         
         // Sum of columns
         int[] sumCols = new int[lengthCol];
@@ -70,25 +90,7 @@ public class Java_Ex14_ArrayMagicSquare {
         }
         System.out.println(Arrays.toString(sumRows));
 
-        // Sum of main diagonal
-        int sumMainDiagonal = 0;
-        for(int i1=0; i1<lengthCol;i1++){
-            for(int j=0; j<lengthCol;j++){
-                if(i1==j)
-                sumMainDiagonal += Integer.parseInt(squareArray[j][i1]);
-            }
-        }
-        System.out.println(sumMainDiagonal);
-        
-        // Sum of antidiagonal
-        int sumAntiDiagonal = 0;
-        for(int i1=0; i1<lengthCol;i1++){
-            for(int j=0; j<lengthCol;j++){
-                if((j==((lengthCol-1)-i1)))
-                sumAntiDiagonal += Integer.parseInt(squareArray[i1][j]);
-            }
-        }
-        System.out.println(sumAntiDiagonal);  
+ 
     }
     
 }
